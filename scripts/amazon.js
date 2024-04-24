@@ -79,5 +79,13 @@ addToCartBtns.forEach((btnEl) => {
         quantity: 1,
       });
     }
+
+    const cartQuantityTotal = cart.reduce(
+      (accumulator, item) => accumulator + item.quantity,
+      0
+    );
+
+    const cartQuantityEl = document.querySelector(".js-cart-quantity");
+    cartQuantityEl.innerHTML = cartQuantityTotal;
   });
 });
